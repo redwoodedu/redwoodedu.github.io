@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		
+<title>红杉学社-相知未来</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+
+<meta name="keywords" content="红杉学社,知识分享">
+<meta name="description" content="红杉学社致力于打造中文的知识分享平台，为广大海内外学者提供沟通桥梁">
+
+
+<script src="/js/jquery.min.js"></script>
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ENVLN46HFP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ENVLN46HFP');
+</script>
+
+
+	<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="红杉学社" type="application/atom+xml">
+</head>
+
+	<body>
+		
+<link rel="stylesheet" href="/css/home.css">
+
+
+<link rel="stylesheet" href="/css/header.css">
+
+	<div class="header">
+		<div class="header-top">
+			<div class="h-left">
+				<a href="/">
+					<img src="/favicons/ms-icon-310x310.png" alt="Quiet">
+				</a>
+			</div>
+			<div class="h-right">
+				<ul>
+					
+						
+							<li class="select">
+								<a href="/">
+									首页
+								</a>
+								<span class="dot"></span>
+							</li>
+							
+									
+						
+								<li>
+									<a href="/archives">
+										内容
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/categories">
+										分类
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/tags">
+										标签
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="">
+										
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/about">
+										关于
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+				</ul>
+			</div>
+			<div class="h-right-close">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+					<path fill="none" d="M0 0h24v24H0z" />
+					<path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" fill="rgba(68,68,68,1)" />
+				</svg>
+			</div>
+		</div>
+	</div>
+	<div class="sidebar">
+    <div class="topo">
+        <h2>红杉学社</h2>
+    </div>
+    <ul>
+        
+        <li>
+            <a href="/">首页</a>
+        </li>
+        
+        <li>
+            <a href="/archives">内容</a>
+        </li>
+        
+        <li>
+            <a href="/categories">分类</a>
+        </li>
+        
+        <li>
+            <a href="/tags">标签</a>
+        </li>
+        
+        <li>
+            <a href=""></a>
+        </li>
+        
+        <li>
+            <a href="/about">关于</a>
+        </li>
+        
+    </ul>
+    <div class="my_foot">
+        
+        <a target="_blank" rel="noopener" href="https://space.bilibili.com/235756546">
+            <img src="/icons/bilibili.svg" alt="Quiet主题">
+        </a>
+        
+        <a target="_blank" rel="noopener" href="https://www.youtube.com/channel/UCMmbp2q018OoDXRWZNvTxtQ">
+            <img src="/icons/youtube.svg" alt="Quiet主题">
+        </a>
+        
+        <a target="_blank" rel="noopener" href="https://www.linkedin.com/company/%E7%BA%A2%E6%9D%89%E5%AD%A6%E7%A4%BE-redwood-academy/">
+            <img src="/icons/linkedin.png" alt="Quiet主题">
+        </a>
+        
+        <a target="_blank" rel="noopener" href="https://github.com/redwoodedu">
+            <img src="/icons/imggithub.png" alt="Quiet主题">
+        </a>
+        
+    </div>
+</div>
+<div class='shelter'
+    style='cursor: pointer;display: none; position: fixed;left: 0;top: 0; right: 0;bottom: 0;background-color: #333;opacity:0.5;z-index: 108;'>
+</div>
+<style>
+    .sidebar {
+        width: 0;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: #fff;
+        z-index: 999;
+        text-align: center;
+        box-shadow: -6px 0 20px rgba(98, 94, 94, .815)
+    }
+
+    .topo {
+        width: 100%;
+        height: 200px;
+        background: url(https://api.ixiaowai.cn/gqapi/gqapi.php) no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+        display: flex;
+        align-items: flex-end
+    }
+
+    .topo h2 {
+        color: #fff;
+        z-index: 1;
+        position: relative;
+        margin: 0 0 10px 10px;
+        font-size: 1.2em;
+        box-sizing: border-box
+    }
+
+    .topo:before {
+        content: '';
+        background-image: url(/image/pattern.png);
+        background-repeat: repeat;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1
+    }
+
+    .sidebar ul {
+        width: 100%;
+        margin-top: 50px
+    }
+
+    .sidebar ul li {
+        height: 50px;
+        list-style: none;
+        font-size: 1.2em;
+        text-align: right;
+        margin-right: 10px
+    }
+
+    .sidebar ul li a {
+        display: grid;
+        color: #5d606a;
+        text-overflow: ellipsis;
+        width: 100%;
+        text-decoration: none
+    }
+
+    .my_foot {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        position: absolute;
+        bottom: 0
+    }
+
+    .my_foot a {
+        text-decoration: none;
+        margin-right: 10px;
+        display: inline-block
+    }
+
+    .my_foot a img {
+        width: 30px;
+        height: 30px
+    }
+</style>
+
+<script>
+    $(function () { $('.h-right-close>svg').click(function () { $('.sidebar').animate({ width: "66%" }, 500); $('.shelter').fadeIn("slow") }); $('.shelter').click(function (e) { $('.sidebar').animate({ width: "0" }, 500); $('.shelter').fadeOut("slow") }) })
+</script>
+		<script>
+			$(function () { $(window).scroll(function () { if ($(document).scrollTop() > 100) { $(".header-top").removeClass("header-move2"); $('.header-top').addClass('header-move1') } else { $(".header-top").removeClass("header-move1"); $('.header-top').addClass('header-move2') } }) });
+		</script>
+<div class="header-bg">
+	<div class="bg-content">
+		<span>
+			<img class="site-logo" src="/favicons/ms-icon-310x310.png" alt="Q">
+		</span>
+		<h2>
+			愿红杉与你共同成长蔚然成林
+		</h2>
+	</div>
+</div>
+<div class="main">
+	<div class="feed">
+		
+			<div class="feed-display">
+				<a href="/2021/05/08/videos/GMn_DiWBd4A/">
+					<h2 class="feed-title">
+						在正义与效率之间 法律科技的探索与创新
+					</h2>
+					
+						<img src="/images/covers/GMn_DiWBd4A.jpg" alt="在正义与效率之间 法律科技的探索与创新">
+						
+				</a>
+				<div class="feed-meat">
+					<div class="meat-info">
+						<div class="info-auth">
+							<a style="cursor:default;">
+								红杉学社
+							</a>
+						</div>
+						<div class="info-data">
+							2021-05-08
+						</div>
+					</div>
+					<div class="meat-type">
+						
+							<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1hy4y1j7yA" class="bilibili"></a>
+						
+							<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=GMn_DiWBd4A" class="youtube"></a>
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="feed-display">
+				<a href="/2021/05/01/videos/aUiBWfew42w/">
+					<h2 class="feed-title">
+						从证券化走向通证化 区块链技术在房地产领域的应用
+					</h2>
+					
+						<img src="/images/covers/aUiBWfew42w.jpg" alt="从证券化走向通证化 区块链技术在房地产领域的应用">
+						
+				</a>
+				<div class="feed-meat">
+					<div class="meat-info">
+						<div class="info-auth">
+							<a style="cursor:default;">
+								红杉学社
+							</a>
+						</div>
+						<div class="info-data">
+							2021-05-01
+						</div>
+					</div>
+					<div class="meat-type">
+						
+							<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1e54y1J7ch" class="bilibili"></a>
+						
+							<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=aUiBWfew42w" class="youtube"></a>
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="feed-display">
+				<a href="/2021/03/27/videos/cA0z01ltSEA/">
+					<h2 class="feed-title">
+						基因编辑和细胞治疗浅析
+					</h2>
+					
+						<img src="/images/covers/cA0z01ltSEA.jpg" alt="基因编辑和细胞治疗浅析">
+						
+				</a>
+				<div class="feed-meat">
+					<div class="meat-info">
+						<div class="info-auth">
+							<a style="cursor:default;">
+								红杉学社
+							</a>
+						</div>
+						<div class="info-data">
+							2021-03-27
+						</div>
+					</div>
+					<div class="meat-type">
+						
+							<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1MK411c7Af" class="bilibili"></a>
+						
+							<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=cA0z01ltSEA" class="youtube"></a>
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="feed-display">
+				<a href="/2021/03/20/videos/SIBtOcIRRjQ/">
+					<h2 class="feed-title">
+						平行时空下的双重身份
+					</h2>
+					
+						<img src="/images/covers/SIBtOcIRRjQ.jpe" alt="平行时空下的双重身份">
+						
+				</a>
+				<div class="feed-meat">
+					<div class="meat-info">
+						<div class="info-auth">
+							<a style="cursor:default;">
+								红杉学社
+							</a>
+						</div>
+						<div class="info-data">
+							2021-03-20
+						</div>
+					</div>
+					<div class="meat-type">
+						
+							<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1uZ4y1w78T" class="bilibili"></a>
+						
+							<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=SIBtOcIRRjQ" class="youtube"></a>
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="feed-display">
+				<a href="/2021/03/09/videos/G7Q0bD6RIeA/">
+					<h2 class="feed-title">
+						光合作用， 从火星到地球
+					</h2>
+					
+						<img src="/images/covers/G7Q0bD6RIeA.jpe" alt="光合作用， 从火星到地球">
+						
+				</a>
+				<div class="feed-meat">
+					<div class="meat-info">
+						<div class="info-auth">
+							<a style="cursor:default;">
+								红杉学社
+							</a>
+						</div>
+						<div class="info-data">
+							2021-03-09
+						</div>
+					</div>
+					<div class="meat-type">
+						
+							<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1YU4y1p7g4" class="bilibili"></a>
+						
+							<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=G7Q0bD6RIeA" class="youtube"></a>
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="feed-display">
+				<a href="/2021/03/07/videos/r2A2p6lWiAA/">
+					<h2 class="feed-title">
+						医疗机器人与人类共融的未来
+					</h2>
+					
+						<img src="/images/covers/r2A2p6lWiAA.jpe" alt="医疗机器人与人类共融的未来">
+						
+				</a>
+				<div class="feed-meat">
+					<div class="meat-info">
+						<div class="info-auth">
+							<a style="cursor:default;">
+								红杉学社
+							</a>
+						</div>
+						<div class="info-data">
+							2021-03-07
+						</div>
+					</div>
+					<div class="meat-type">
+						
+							<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1dV411v7X2" class="bilibili"></a>
+						
+							<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=r2A2p6lWiAA" class="youtube"></a>
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="feed-display">
+				<a href="/2021/02/24/videos/Aca8VbpCOuc/">
+					<h2 class="feed-title">
+						科学教育的绚烂前景
+					</h2>
+					
+						<img src="/images/covers/Aca8VbpCOuc.jpe" alt="科学教育的绚烂前景">
+						
+				</a>
+				<div class="feed-meat">
+					<div class="meat-info">
+						<div class="info-auth">
+							<a style="cursor:default;">
+								红杉学社
+							</a>
+						</div>
+						<div class="info-data">
+							2021-02-24
+						</div>
+					</div>
+					<div class="meat-type">
+						
+							<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Ub4y1R7XJ" class="bilibili"></a>
+						
+							<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=Aca8VbpCOuc" class="youtube"></a>
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="feed-display">
+				<a href="/2021/02/17/videos/4NGZWteuOyg/">
+					<h2 class="feed-title">
+						为创业梦想保驾护航
+					</h2>
+					
+						<img src="/images/covers/4NGZWteuOyg.jpe" alt="为创业梦想保驾护航">
+						
+				</a>
+				<div class="feed-meat">
+					<div class="meat-info">
+						<div class="info-auth">
+							<a style="cursor:default;">
+								红杉学社
+							</a>
+						</div>
+						<div class="info-data">
+							2021-02-17
+						</div>
+					</div>
+					<div class="meat-type">
+						
+							<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Sz4y127Jd" class="bilibili"></a>
+						
+							<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=4NGZWteuOyg" class="youtube"></a>
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="feed-display">
+				<a href="/2021/02/08/videos/qM8OJb04nHA/">
+					<h2 class="feed-title">
+						量子计算简介和经典量子算法
+					</h2>
+					
+						<img src="/images/covers/qM8OJb04nHA.jpe" alt="量子计算简介和经典量子算法">
+						
+				</a>
+				<div class="feed-meat">
+					<div class="meat-info">
+						<div class="info-auth">
+							<a style="cursor:default;">
+								红杉学社
+							</a>
+						</div>
+						<div class="info-data">
+							2021-02-08
+						</div>
+					</div>
+					<div class="meat-type">
+						
+							<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15A411g7ys" class="bilibili"></a>
+						
+							<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=qM8OJb04nHA" class="youtube"></a>
+						
+					</div>
+				</div>
+			</div>
+			
+	</div>
+</div>
+<div class="change-page">
+	
+		<div class="p-page">
+			<a href="/page/2/">
+				<div class="previous">
+					上一页
+				</div>
+			</a>
+		</div>
+		
+			
+				<div class="n-page">
+					<a href="/page/4/">
+						<div class="next">
+							下一页
+						</div>
+					</a>
+				</div>
+				
+</div>
+<script>$(function () { $('.feed').addClass('move'); })</script>
+		
+<link rel="stylesheet" href="/css/foot.css">
+
+
+<script src="/js/search.js"></script>
+
+<div class="footer">
+	<div class="Copyright">
+		©2021 By 红杉学社.
+	</div>
+	<div class="contact">
+		
+		<a target="_blank" rel="noopener" href="https://space.bilibili.com/235756546">
+			<img src="/icons/bilibili.svg" alt="Quiet主题">
+		</a>
+		
+		<a target="_blank" rel="noopener" href="https://www.youtube.com/channel/UCMmbp2q018OoDXRWZNvTxtQ">
+			<img src="/icons/youtube.svg" alt="Quiet主题">
+		</a>
+		
+		<a target="_blank" rel="noopener" href="https://www.linkedin.com/company/%E7%BA%A2%E6%9D%89%E5%AD%A6%E7%A4%BE-redwood-academy/">
+			<img src="/icons/linkedin.png" alt="Quiet主题">
+		</a>
+		
+		<a target="_blank" rel="noopener" href="https://github.com/redwoodedu">
+			<img src="/icons/imggithub.png" alt="Quiet主题">
+		</a>
+		
+	</div>
+</div>
+
+<script src="/js/jquery.min.js"></script>
+
+
+<script src="/js/gotop.js"></script>
+
+
+<style type="text/css">
+    @media screen and (min-width: 600px) {
+        .goTop>span {
+            display: block;
+            border-radius: 50%;
+            width: 66px;
+            height: 66px;
+            cursor: pointer;
+            opacity: 0.8;
+            background: rgba(18, 24, 58, 0.06);
+            text-align: center;
+            border: 1px solid rgba(18, 24, 58, 0.06);
+
+            transition: border .5s;
+            -moz-transition: border .5s;
+            /* Firefox 4 */
+            -webkit-transition: border .5s;
+            /* Safari 和 Chrome */
+            -o-transition: border .5s;
+            /* Opera */
+        }
+
+        .goTop>span:hover {
+            border: 1px solid #6680B3;
+        }
+
+
+        .goTop {
+            position: fixed;
+            right: 30px;
+            bottom: 80px;
+        }
+
+        .goTop>span>svg {
+            width: 30px;
+            height: 30px;
+            margin-top: 17.5px;
+            opacity: 0.7;
+        }
+
+    }
+
+    @media screen and (max-width: 600px) {
+        .goTop {
+            display: none;
+        }
+    }
+</style>
+<div class="goTop" id="js-go_top">
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <g>
+                <path d="M13 12v8h-2v-8H4l8-8 8 8z"></path>
+            </g>
+        </svg>
+    </span>
+</div>
+<script>
+    $('#js-go_top').gotoTop({ offset: 500, speed: 300, animationShow: { 'transform': 'translate(0,0)', 'transition': 'transform .5s ease-in-out' }, animationHide: { 'transform': 'translate(100px,0)', 'transition': 'transform .5s ease-in-out' } });
+</script>
+<script>
+	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/QiaoBug/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
+</script>
+
+
+	<script type="text/javascript">      
+	  var search_path = "search.xml";
+	  if (search_path.length == 0) {
+		  search_path = "search.xml";
+	  }
+	  var path = "/" + search_path;
+	  searchFunc(path, 'local-search-input', 'local-search-result');
+	</script>
+
+	</body>
+
+</html>

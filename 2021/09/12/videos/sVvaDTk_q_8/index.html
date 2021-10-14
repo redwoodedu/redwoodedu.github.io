@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		
+<title>基于类脑计算的硬件设计-相知未来</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+
+
+<meta name="keywords" content="公开课,红杉学社,讲座,计算机,硬件,类脑,仿生,超算,设计,">
+<meta name="description" content="像我们目前采用的传统机器学习算法, 都是基于弱人工智能的机器思维. 弱人工智能相当于计算器, 只能在加减乘除的运算基础上进行计算. 而现在CPU的二进制加减乘除的计算和人脑的处理方法完全不一样. 举个例子, 将输入的数据比喻成乘客, 冯诺依曼结构中的内存比喻成汽车, 总线比喻为高速公路；那么汽车运送乘客的能力限制于公路的宽度和汽车的多少; 这种硬件架构上的局限, 意味着如果需要更快和更多的数据计算, 则需要更多的硬件资源来支持. 日常生活中, 手机性能的区别就在于内存和CPU的强大, 越高端的手机越流畅, 也是因为更强大的硬件支持, 比如内存大越大其所能处理的数据越多; CPU核数越多, 性能就越高, 越能完成复杂任务. 因此, 目前的机器学习算法由于底层机器思维的原因, 在硬件架构上有着无法避免的局限性。
+基于对降低能耗的需求, 有一种解决方式就是将机器思维转化为生物思维的算法来适配硬件环境. 类脑计算, 是基于对人脑, 模拟神经元的工作系统, 因此更接近人脑的思考模式. 采取类脑计算, 可以绕开内存和总线等硬件设计, 从而避免冯诺依曼架构的机器思维, 减少处理时的能耗问题和实时性等问题. 模拟的每个神经元通过学习和记录需要联想记忆的事件的神经元激励和抑制的电信号. 它们神经元组成的网状结构, 通过传达不同的激励和抑制的开关信号的组合来表达某种意义, 实现和人脑一样的联想记忆功能。">
+
+
+<script src="/js/jquery.min.js"></script>
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ENVLN46HFP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ENVLN46HFP');
+</script>
+
+
+	<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="红杉学社" type="application/atom+xml">
+</head>
+
+	<body>
+		
+<link rel="stylesheet" href="/css/page.css">
+
+
+<link rel="stylesheet" href="/css/page_cente.css">
+
+
+<link rel="stylesheet" href="/css/atom-one-dark.css">
+
+
+<link rel="stylesheet" href="/css/header.css">
+
+	<div class="header">
+		<div class="header-top">
+			<div class="h-left">
+				<a href="/">
+					<img src="/favicons/ms-icon-310x310.png" alt="Quiet">
+				</a>
+			</div>
+			<div class="h-right">
+				<ul>
+					
+						
+								<li>
+									<a href="/">
+										首页
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/archives">
+										内容
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/categories">
+										分类
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/tags">
+										标签
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="">
+										
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/about">
+										关于
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+				</ul>
+			</div>
+			<div class="h-right-close">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+					<path fill="none" d="M0 0h24v24H0z" />
+					<path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" fill="rgba(68,68,68,1)" />
+				</svg>
+			</div>
+		</div>
+	</div>
+	<div class="sidebar">
+    <div class="topo">
+        <h2>红杉学社</h2>
+    </div>
+    <ul>
+        
+        <li>
+            <a href="/">首页</a>
+        </li>
+        
+        <li>
+            <a href="/archives">内容</a>
+        </li>
+        
+        <li>
+            <a href="/categories">分类</a>
+        </li>
+        
+        <li>
+            <a href="/tags">标签</a>
+        </li>
+        
+        <li>
+            <a href=""></a>
+        </li>
+        
+        <li>
+            <a href="/about">关于</a>
+        </li>
+        
+    </ul>
+    <div class="my_foot">
+        
+        <a target="_blank" rel="noopener" href="https://space.bilibili.com/235756546">
+            <img src="/icons/bilibili.svg" alt="Quiet主题">
+        </a>
+        
+        <a target="_blank" rel="noopener" href="https://www.youtube.com/channel/UCMmbp2q018OoDXRWZNvTxtQ">
+            <img src="/icons/youtube.svg" alt="Quiet主题">
+        </a>
+        
+        <a target="_blank" rel="noopener" href="https://www.linkedin.com/company/%E7%BA%A2%E6%9D%89%E5%AD%A6%E7%A4%BE-redwood-academy/">
+            <img src="/icons/linkedin.png" alt="Quiet主题">
+        </a>
+        
+        <a target="_blank" rel="noopener" href="https://github.com/redwoodedu">
+            <img src="/icons/imggithub.png" alt="Quiet主题">
+        </a>
+        
+    </div>
+</div>
+<div class='shelter'
+    style='cursor: pointer;display: none; position: fixed;left: 0;top: 0; right: 0;bottom: 0;background-color: #333;opacity:0.5;z-index: 108;'>
+</div>
+<style>
+    .sidebar {
+        width: 0;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: #fff;
+        z-index: 999;
+        text-align: center;
+        box-shadow: -6px 0 20px rgba(98, 94, 94, .815)
+    }
+
+    .topo {
+        width: 100%;
+        height: 200px;
+        background: url(https://api.ixiaowai.cn/gqapi/gqapi.php) no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+        display: flex;
+        align-items: flex-end
+    }
+
+    .topo h2 {
+        color: #fff;
+        z-index: 1;
+        position: relative;
+        margin: 0 0 10px 10px;
+        font-size: 1.2em;
+        box-sizing: border-box
+    }
+
+    .topo:before {
+        content: '';
+        background-image: url(/image/pattern.png);
+        background-repeat: repeat;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1
+    }
+
+    .sidebar ul {
+        width: 100%;
+        margin-top: 50px
+    }
+
+    .sidebar ul li {
+        height: 50px;
+        list-style: none;
+        font-size: 1.2em;
+        text-align: right;
+        margin-right: 10px
+    }
+
+    .sidebar ul li a {
+        display: grid;
+        color: #5d606a;
+        text-overflow: ellipsis;
+        width: 100%;
+        text-decoration: none
+    }
+
+    .my_foot {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        position: absolute;
+        bottom: 0
+    }
+
+    .my_foot a {
+        text-decoration: none;
+        margin-right: 10px;
+        display: inline-block
+    }
+
+    .my_foot a img {
+        width: 30px;
+        height: 30px
+    }
+</style>
+
+<script>
+    $(function () { $('.h-right-close>svg').click(function () { $('.sidebar').animate({ width: "66%" }, 500); $('.shelter').fadeIn("slow") }); $('.shelter').click(function (e) { $('.sidebar').animate({ width: "0" }, 500); $('.shelter').fadeOut("slow") }) })
+</script>
+		<script>
+			$(function () { $(window).scroll(function () { if ($(document).scrollTop() > 100) { $(".header-top").removeClass("header-move2"); $('.header-top').addClass('header-move1') } else { $(".header-top").removeClass("header-move1"); $('.header-top').addClass('header-move2') } }) });
+		</script>
+<div class="header-bg bg-content-img">
+    <div class="bg-content">
+        <ul class="tag">
+            
+            
+            <li><a href="/tags/公开课">公开课</a></li>
+            
+            <li><a href="/tags/红杉学社">红杉学社</a></li>
+            
+            <li><a href="/tags/讲座">讲座</a></li>
+            
+            <li><a href="/tags/计算机">计算机</a></li>
+            
+            <li><a href="/tags/硬件">硬件</a></li>
+            
+            <li><a href="/tags/类脑">类脑</a></li>
+            
+            <li><a href="/tags/仿生">仿生</a></li>
+            
+            <li><a href="/tags/超算">超算</a></li>
+            
+            <li><a href="/tags/设计">设计</a></li>
+            
+            
+        </ul>
+        <h1>基于类脑计算的硬件设计</h1>
+        <div class="article-info">
+            <div class="article-author">
+                
+                <svg t="1604839279282" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="2901" width="20" height="20">
+                    <path
+                        d="M513 956.3c-247.7 0-448-200.3-448-448S265.3 66.2 513 66.2s448 200.3 448 448-200.3 442.1-448 442.1z m0-830.9c-212.2 0-388.8 170.7-388.8 388.8C124.2 726.3 294.9 903 513 903c212.2 0 388.8-170.7 388.8-388.8S725.2 125.4 513 125.4z m0 430.2c-94.2 0-170.7-76.5-170.7-170.7S418.8 207.8 513 207.8s170.7 76.5 170.7 170.7S607.2 555.6 513 555.6z m0-289.1c-64.6 0-112 52.8-112 112s47.4 117.9 112 117.9 112-52.8 112-112-47.4-117.9-112-117.9z m0 689.8c-135.7 0-259-58.7-341.9-158.9l-11.8-17.8 11.8-17.8c76.5-117.9 206.2-188.5 347.8-188.5 135.7 0 265 64.6 341.9 182.6l11.8 17.8-11.8 17.8C778 897.1 648.7 956.3 513 956.3zM230.3 773.2C300.9 849.7 406.9 897 513 897c112 0 218.1-47.4 288.6-129.8-70.5-88.2-170.7-135.6-282.7-135.6s-218.1 53.3-288.6 141.6z"
+                        p-id="2902" fill="#ffffff"></path>
+                </svg>
+                
+                <span> <a href="">红杉学社</a></span>
+                <p>2021-09-12</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="article-content">
+    <div id="article" class="content">
+        <div class="video-link">
+            
+                <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV11q4y1N7d1" class="bilibili"></a>
+            
+                <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=sVvaDTk_q_8" class="youtube"></a>
+            
+        </div>
+        <p><img src="/images/covers/sVvaDTk_q_8.jpg"><br></p>
+<h3 id="主讲人"><a href="#主讲人" class="headerlink" title="主讲人"></a>主讲人</h3><p>俞喆祺<br>University of Glasgow 电子工程在读博士<br>兼职于英国Transreport Ltd. Xilinx认证工程师<br>曾就职于西班牙巴塞罗那超算中心<br>英国Sundance Multiprocessor Technology Ltd<br>以及英国华为爱丁堡研究所</p>
+<h3 id="公开课简介"><a href="#公开课简介" class="headerlink" title="公开课简介"></a>公开课简介</h3><p>像我们目前采用的传统机器学习算法, 都是基于弱人工智能的机器思维. 弱人工智能相当于计算器, 只能在加减乘除的运算基础上进行计算. 而现在CPU的二进制加减乘除的计算和人脑的处理方法完全不一样. 举个例子, 将输入的数据比喻成乘客, 冯诺依曼结构中的内存比喻成汽车, 总线比喻为高速公路；那么汽车运送乘客的能力限制于公路的宽度和汽车的多少; 这种硬件架构上的局限, 意味着如果需要更快和更多的数据计算, 则需要更多的硬件资源来支持. 日常生活中, 手机性能的区别就在于内存和CPU的强大, 越高端的手机越流畅, 也是因为更强大的硬件支持, 比如内存大越大其所能处理的数据越多; CPU核数越多, 性能就越高, 越能完成复杂任务. 因此, 目前的机器学习算法由于底层机器思维的原因, 在硬件架构上有着无法避免的局限性。</p>
+<p>基于对降低能耗的需求, 有一种解决方式就是将机器思维转化为生物思维的算法来适配硬件环境. 类脑计算, 是基于对人脑, 模拟神经元的工作系统, 因此更接近人脑的思考模式. 采取类脑计算, 可以绕开内存和总线等硬件设计, 从而避免冯诺依曼架构的机器思维, 减少处理时的能耗问题和实时性等问题. 模拟的每个神经元通过学习和记录需要联想记忆的事件的神经元激励和抑制的电信号. 它们神经元组成的网状结构, 通过传达不同的激励和抑制的开关信号的组合来表达某种意义, 实现和人脑一样的联想记忆功能。</p>
+<h3 id="问答环节"><a href="#问答环节" class="headerlink" title="问答环节"></a>问答环节</h3><p>Q：类脑计算神经网络是什么？<br>A：基于机器思维的深度学习, 是基于层级结构的神经网络, 通过每一层网络学习知识, 一层一层往下传递参数, 到最后综合得到网络权重；而生物思维的神经网络不再是一层一层, 而是和大脑结构一样, 把所有神经元全部互相链接, 比如, 在类脑计算的神经网络中的网状结构是的每一个神经元, 都会连接到其他所有的神经元。关于类脑计算的联想学习能力, 有一个著名的实验 “巴甫洛夫的狗” , 心理学家巴甫洛夫（Ivan Pavlov）在研究无条件反射和条件反射时, 用狗做了这样一个实验：每次给狗狗送食物前, 摇响起铃铛, 经过一段时间后, 一旦铃声一响, 狗就会开始分泌唾液, 准备吃饭. 以此类推, 到类脑计算中, 通过对某个特定信号的训练, 让类脑计算中的神经元获得对整个事件的每个神经元的兴奋和抑制状态, 此时获得的神经元的参数权重就代表了类脑计算对此类事件的预测。</p>
+<p>Q：实际应用中的例子<br>A：类似应用包括基于传感器信号的类脑计算, 用户通过手腕上带着的传感器可以传递空间坐标信号, 记录动作幅度等数据. 通过定义跌倒的传感器信号训练Hopfield Neural Network进行联想记忆, 得到是每个神经元参数针对跌倒的传感器信号的权重. 并在硬件中通过放大器和累加器搭建类脑计算的神经元, 完成Hopfield Neural Network算法(类脑计算中的一个神经网络算法)的电路设计.最后, 基于转化计算, 把软件端的神经网络权重映射成硬件电路中对应神经元中的放大因子的参数. 完成整个类脑计算的硬件实现。</p>
+<p>Q：领域中前沿的研究<br>A：目前主要是大厂和一些研究所, 像IBM的TrueNorth芯片, 英特尔的Loihi芯片, 曼彻斯特大学的SpiNNaker芯片, 都是比较前沿的研究. 但这个行业还没有正式投入商用：大家对电子设备的需求都偏向通用, 有多样复杂任务同时进行, 而现有的类脑计算的神经网络只能在特定的运算规则下运行, 除了指定的数据信号, 其他的任务都不能完成. 从现在各大公司的研究成果来看, 像IBM TrueNorth这样的类脑芯片运行的效率无法达到在传统架构上运用神经网络的芯片. 但冯诺依曼架构的瓶颈是客观存在的事实, 随着运算数据量的增加, 这一短板将越来越明显. 而对于类脑计算, 以后也肯定会出现支持通用计算的芯片。</p>
+
+    </div>
+</div>
+<style>
+    #noneimg img {
+        display: none;
+        z-index: 109;
+        width: 100% !important;
+        border-radius: 0px;
+        position: fixed;
+        box-shadow: 0 0 0px #c3c3c300 !important;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto !important;
+    }
+
+    @media screen and (max-width:600px) {
+        #noneimg img {
+            width: 88%
+        }
+    }
+</style>
+<script>
+    $(function () {
+        $('#article').click(function (e) {
+            if (e.target.tagName == "IMG") {
+                if ($('#nonediv').length == 0) {
+                    let MImg = `<div id='noneimg'><img src='${e.target.currentSrc}'></div>`;
+                    let MDiv =
+                        "<div id='nonediv' style='cursor: pointer;display: none; position: fixed;left: 0;top: 0; right: 0;bottom: 0;background-color: #333;opacity:0.5;z-index: 108;'></div>";
+                    $('#article').append(MDiv);
+                    $('#article').append(MImg);
+                    $("#nonediv").fadeIn("slow");
+                    $("#noneimg img").fadeIn("slow")
+                }
+            } else {
+                if ($('#nonediv').length !== 0) {
+                    $("#noneimg ").fadeOut("slow");
+                    $("#nonediv").fadeOut("slow");
+                    setTimeout(function () {
+                        $('#nonediv').remove();
+                        $('#noneimg').remove()
+                    }, 500)
+                }
+            }
+        });
+        $('.article-content').addClass('content-move')
+    });
+</script>
+<div class="Last-Next">
+    
+    <a href="/2021/09/24/videos/H0Wp9uAhKiM/">
+        <div class="last">
+            <span>上一篇</span>
+            <p>全球气候变化峰会与中国乡村转型</p>
+        </div>
+    </a>
+    
+
+    
+    <a href="/2021/09/04/videos/1dhJOvfPk58/">
+        <div class="next">
+            <span>下一篇</span>
+            <p>IEEE通往VR AR的终极之路</p>
+        </div>
+    </a>
+    
+</div>
+		
+<link rel="stylesheet" href="/css/foot.css">
+
+
+<script src="/js/search.js"></script>
+
+<div class="footer">
+	<div class="Copyright">
+		©2021 By 红杉学社.
+	</div>
+	<div class="contact">
+		
+		<a target="_blank" rel="noopener" href="https://space.bilibili.com/235756546">
+			<img src="/icons/bilibili.svg" alt="Quiet主题">
+		</a>
+		
+		<a target="_blank" rel="noopener" href="https://www.youtube.com/channel/UCMmbp2q018OoDXRWZNvTxtQ">
+			<img src="/icons/youtube.svg" alt="Quiet主题">
+		</a>
+		
+		<a target="_blank" rel="noopener" href="https://www.linkedin.com/company/%E7%BA%A2%E6%9D%89%E5%AD%A6%E7%A4%BE-redwood-academy/">
+			<img src="/icons/linkedin.png" alt="Quiet主题">
+		</a>
+		
+		<a target="_blank" rel="noopener" href="https://github.com/redwoodedu">
+			<img src="/icons/imggithub.png" alt="Quiet主题">
+		</a>
+		
+	</div>
+</div>
+
+<script src="/js/jquery.min.js"></script>
+
+
+<script src="/js/gotop.js"></script>
+
+
+<style type="text/css">
+    @media screen and (min-width: 600px) {
+        .goTop>span {
+            display: block;
+            border-radius: 50%;
+            width: 66px;
+            height: 66px;
+            cursor: pointer;
+            opacity: 0.8;
+            background: rgba(18, 24, 58, 0.06);
+            text-align: center;
+            border: 1px solid rgba(18, 24, 58, 0.06);
+
+            transition: border .5s;
+            -moz-transition: border .5s;
+            /* Firefox 4 */
+            -webkit-transition: border .5s;
+            /* Safari 和 Chrome */
+            -o-transition: border .5s;
+            /* Opera */
+        }
+
+        .goTop>span:hover {
+            border: 1px solid #6680B3;
+        }
+
+
+        .goTop {
+            position: fixed;
+            right: 30px;
+            bottom: 80px;
+        }
+
+        .goTop>span>svg {
+            width: 30px;
+            height: 30px;
+            margin-top: 17.5px;
+            opacity: 0.7;
+        }
+
+    }
+
+    @media screen and (max-width: 600px) {
+        .goTop {
+            display: none;
+        }
+    }
+</style>
+<div class="goTop" id="js-go_top">
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <g>
+                <path d="M13 12v8h-2v-8H4l8-8 8 8z"></path>
+            </g>
+        </svg>
+    </span>
+</div>
+<script>
+    $('#js-go_top').gotoTop({ offset: 500, speed: 300, animationShow: { 'transform': 'translate(0,0)', 'transition': 'transform .5s ease-in-out' }, animationHide: { 'transform': 'translate(100px,0)', 'transition': 'transform .5s ease-in-out' } });
+</script>
+<script>
+	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/QiaoBug/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
+</script>
+
+
+	<script type="text/javascript">      
+	  var search_path = "search.xml";
+	  if (search_path.length == 0) {
+		  search_path = "search.xml";
+	  }
+	  var path = "/" + search_path;
+	  searchFunc(path, 'local-search-input', 'local-search-result');
+	</script>
+
+	</body>
+
+</html>
